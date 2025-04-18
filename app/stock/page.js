@@ -1,7 +1,8 @@
+export const dynamic = "force-dynamic";
+
 async function getStockData() {
-  const res = await fetch("https://api.example.com/stocks", {
-    next: { revalidate: 10 },
-  });
+  const res = await fetch("https://your-api.com/stocks", { cache: "no-store" });
+
   return res.json();
 }
 
